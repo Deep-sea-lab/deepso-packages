@@ -1,0 +1,27 @@
+{
+  "format": "deepso-package",
+  "formatVersion": 1,
+  "id": "hello-app",
+  "name": "Hello App",
+  "version": "1.0.0",
+  "description": "A minimal command-line application package for DeepSO.",
+  "roles": [
+    {
+      "name": "HelloApp",
+      "file": "roles/HelloApp.sprite3"
+    }
+  ],
+  "executor": {
+    "api": 1,
+    "entryRole": "HelloApp",
+    "hooks": []
+  },
+  "app": {
+    "id": "hello-app",
+    "name": "Hello App",
+    "icon": "icons/hello.svg",
+    "type": "cli",
+    "entry": "HelloApp",
+    "autostart": false
+  }
+}

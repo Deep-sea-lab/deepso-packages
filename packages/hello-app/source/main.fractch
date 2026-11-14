@@ -1,0 +1,19 @@
+// fractch:ignore
+sprite "HelloApp" at 0,0 hidden;
+
+when flag {
+  local startedForRequest = false;
+  forever {
+    if vars["_DSO_START_REQUEST"] != "hello-app" {
+      startedForRequest = false;
+    }
+    if vars["_DSO_START_REQUEST"] == "hello-app" && !startedForRequest {
+      startedForRequest = true;
+      append(_DSO_OUTPUT_BUFFER, "Hello from a DeepSO application process.");
+      broadcast DSO_PRINT;
+      vars["_DSO_START_ACK"] = "hello-app";
+      vars["_DSO_APP_EXITED"] = "hello-app";
+    }
+    wait 0.02;
+  }
+}
