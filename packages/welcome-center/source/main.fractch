@@ -1,0 +1,29 @@
+// fractch:ignore
+sprite "WelcomeCenter" at 0,0 size 100 hidden;
+
+var _WELCOME_CLOSING = 0;
+
+when broadcast DSO_PROCESS_WAKE {
+  if vars["_DSO_START_REQUEST"] == "welcome-center" {
+    _WELCOME_CLOSING = 0;
+    text.setWidth(WIDTH: 410, ALIGN: "left");
+    text.setColor(COLOR: "#fff1d6");
+    text.setText(TEXT: "WELCOME TO DEEPSO\n\nA Scratch-powered pseudo-OS\n\npkg search     Browse packages\npkg install ID Install an app\nrun ID         Launch an app\ndesktop        List installed apps\nfs ls          Browse virtual files\n\nPress Escape to close");
+    show;
+    vars["_DSO_START_ACK"] = "welcome-center";
+    forever {
+      if vars["_DSO_STOP_REQUEST"] == "welcome-center" || _WELCOME_CLOSING == 1 {
+        hide;
+        vars["_DSO_APP_EXITED"] = "welcome-center";
+        break;
+      }
+      wait 0.05;
+    }
+  }
+}
+
+when key escape {
+  if vars["_DSO_ACTIVE_APP"] == "welcome-center" {
+    _WELCOME_CLOSING = 1;
+  }
+}

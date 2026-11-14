@@ -1,0 +1,27 @@
+{
+  "format": "deepso-package",
+  "formatVersion": 1,
+  "id": "welcome-center",
+  "name": "Welcome Center",
+  "version": "1.0.0",
+  "description": "A getting-started screen for DeepSO commands and apps.",
+  "roles": [
+    {
+      "name": "WelcomeCenter",
+      "file": "roles/WelcomeCenter.sprite3"
+    }
+  ],
+  "executor": {
+    "api": 1,
+    "entryRole": "WelcomeCenter",
+    "hooks": []
+  },
+  "app": {
+    "id": "welcome-center",
+    "name": "Welcome Center",
+    "icon": "icons/welcome-center.svg",
+    "type": "gui",
+    "entry": "WelcomeCenter",
+    "autostart": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format": "deepso-package",
+  "formatVersion": 1,
+  "id": "desk-clock",
+  "name": "DeepSO Clock",
+  "version": "1.0.0",
+  "description": "A live clock page for the DeepSO stage.",
+  "roles": [
+    {
+      "name": "DeskClock",
+      "file": "roles/DeskClock.sprite3"
+    }
+  ],
+  "executor": {
+    "api": 1,
+    "entryRole": "DeskClock",
+    "hooks": []
+  },
+  "app": {
+    "id": "desk-clock",
+    "name": "DeepSO Clock",
+    "icon": "icons/desk-clock.svg",
+    "type": "gui",
+    "entry": "DeskClock",
+    "autostart": false
+  }
+}

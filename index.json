@@ -4,5 +4,23 @@
     "version": "1.0.1",
     "package": "packages/hello-app.dso",
     "manifest": "packages/hello-app/manifest.json"
+  },
+  {
+    "id": "desk-clock",
+    "version": "1.0.0",
+    "package": "packages/desk-clock.dso",
+    "manifest": "packages/desk-clock/manifest.json"
+  },
+  {
+    "id": "click-counter",
+    "version": "1.0.0",
+    "package": "packages/click-counter.dso",
+    "manifest": "packages/click-counter/manifest.json"
+  },
+  {
+    "id": "welcome-center",
+    "version": "1.0.0",
+    "package": "packages/welcome-center.dso",
+    "manifest": "packages/welcome-center/manifest.json"
   }
 ]

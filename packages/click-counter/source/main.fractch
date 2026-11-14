@@ -1,0 +1,38 @@
+// fractch:ignore
+sprite "ClickCounter" at 0,0 size 100 hidden;
+
+var _COUNTER_COUNT = 0;
+var _COUNTER_CLOSING = 0;
+
+when broadcast DSO_PROCESS_WAKE {
+  if vars["_DSO_START_REQUEST"] == "click-counter" {
+    _COUNTER_COUNT = 0;
+    _COUNTER_CLOSING = 0;
+    text.setWidth(WIDTH: 400, ALIGN: "left");
+    text.setColor(COLOR: "#e5ffe9");
+    text.setText(TEXT: "CLICK COUNTER\n\n0\n\nClick this page to count.\nPress Escape to close");
+    show;
+    vars["_DSO_START_ACK"] = "click-counter";
+    forever {
+      if vars["_DSO_STOP_REQUEST"] == "click-counter" || _COUNTER_CLOSING == 1 {
+        hide;
+        vars["_DSO_APP_EXITED"] = "click-counter";
+        break;
+      }
+      wait 0.05;
+    }
+  }
+}
+
+when clicked {
+  if vars["_DSO_ACTIVE_APP"] == "click-counter" {
+    _COUNTER_COUNT += 1;
+    text.setText(TEXT: "CLICK COUNTER\n\n" ++ _COUNTER_COUNT ++ "\n\nClick this page to count.\nPress Escape to close");
+  }
+}
+
+when key escape {
+  if vars["_DSO_ACTIVE_APP"] == "click-counter" {
+    _COUNTER_CLOSING = 1;
+  }
+}

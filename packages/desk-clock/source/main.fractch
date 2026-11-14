@@ -1,0 +1,30 @@
+// fractch:ignore
+sprite "DeskClock" at 0,0 size 100 hidden;
+
+var _CLOCK_CLOSING = 0;
+
+when broadcast DSO_PROCESS_WAKE {
+  if vars["_DSO_START_REQUEST"] == "desk-clock" {
+    _CLOCK_CLOSING = 0;
+    text.setWidth(WIDTH: 400, ALIGN: "left");
+    text.setColor(COLOR: "#dce8ff");
+    show;
+    text.setText(TEXT: "DEEPSO CLOCK\n\n" ++ currentHour() ++ ":" ++ currentMinute() ++ ":" ++ currentSecond() ++ "\n\nPress Escape to close");
+    vars["_DSO_START_ACK"] = "desk-clock";
+    forever {
+      if vars["_DSO_STOP_REQUEST"] == "desk-clock" || _CLOCK_CLOSING == 1 {
+        hide;
+        vars["_DSO_APP_EXITED"] = "desk-clock";
+        break;
+      }
+      text.setText(TEXT: "DEEPSO CLOCK\n\n" ++ currentHour() ++ ":" ++ currentMinute() ++ ":" ++ currentSecond() ++ "\n\nPress Escape to close");
+      wait 0.1;
+    }
+  }
+}
+
+when key escape {
+  if vars["_DSO_ACTIVE_APP"] == "desk-clock" {
+    _CLOCK_CLOSING = 1;
+  }
+}

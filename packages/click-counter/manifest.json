@@ -1,0 +1,27 @@
+{
+  "format": "deepso-package",
+  "formatVersion": 1,
+  "id": "click-counter",
+  "name": "Click Counter",
+  "version": "1.0.0",
+  "description": "A simple interactive graphical counter for the DeepSO stage.",
+  "roles": [
+    {
+      "name": "ClickCounter",
+      "file": "roles/ClickCounter.sprite3"
+    }
+  ],
+  "executor": {
+    "api": 1,
+    "entryRole": "ClickCounter",
+    "hooks": []
+  },
+  "app": {
+    "id": "click-counter",
+    "name": "Click Counter",
+    "icon": "icons/click-counter.svg",
+    "type": "gui",
+    "entry": "ClickCounter",
+    "autostart": false
+  }
+}
