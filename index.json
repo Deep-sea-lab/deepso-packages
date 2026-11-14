@@ -22,5 +22,11 @@
     "version": "1.0.0",
     "package": "packages/welcome-center.dso",
     "manifest": "packages/welcome-center/manifest.json"
+  },
+  {
+    "id": "techfure-ui",
+    "version": "1.0.0",
+    "package": "packages/techfure-ui.dso",
+    "manifest": "packages/techfure-ui/manifest.json"
   }
 ]

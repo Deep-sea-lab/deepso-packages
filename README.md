@@ -12,6 +12,7 @@ pkg search
 pkg install desk-clock
 pkg install click-counter
 pkg install welcome-center
+pkg install techfure-ui
 run desk-clock
 ```
 
@@ -23,8 +24,12 @@ The repository also includes `hello-app`, a command-line process example.
 - `desk-clock` displays the current time.
 - `click-counter` increments when its page is clicked.
 - `welcome-center` shows common DeepSO commands.
+- `techfure-ui` demonstrates a navigable desktop menu, welcome page, and
+  file-manager, settings, and about mockups.
 
-These are single-stage GUI prototypes, not managed desktop windows. Each role
+These are single-stage GUI prototypes, not managed desktop windows. TechFure
+UI navigation is presentation-only; it does not operate the filesystem,
+persist settings, or launch other apps. Each role
 waits for the executor's `DSO_PROCESS_WAKE` broadcast, checks its app ID in
 `_DSO_START_REQUEST`, acknowledges with `_DSO_START_ACK`, and reports exit
 through `_DSO_APP_EXITED`.
