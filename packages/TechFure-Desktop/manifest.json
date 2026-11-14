@@ -1,0 +1,67 @@
+{
+  "format": "deepso-package",
+  "formatVersion": 1,
+  "id": "techfure-desktop",
+  "name": "TechFure Desktop",
+  "version": "1.0.0",
+  "description": "The original TechFure desktop UI with system operations disabled.",
+  "roles": [
+    {
+      "name": "水印",
+      "file": "roles/TFWatermark.sprite3"
+    },
+    {
+      "name": "app//文件管理器",
+      "file": "roles/TFFileManagerUI.sprite3"
+    },
+    {
+      "name": "app//设置",
+      "file": "roles/TFSettingsUI.sprite3"
+    },
+    {
+      "name": "app//AI",
+      "file": "roles/TFAIIcon.sprite3"
+    },
+    {
+      "name": "app//欢迎",
+      "file": "roles/TFWelcomeUI.sprite3"
+    },
+    {
+      "name": "桌面//栏",
+      "file": "roles/TFDock.sprite3"
+    },
+    {
+      "name": "桌面//通知",
+      "file": "roles/TFNotifications.sprite3"
+    },
+    {
+      "name": "桌面//桌面-背景",
+      "file": "roles/TFWallpaper.sprite3"
+    },
+    {
+      "name": "桌面//中心",
+      "file": "roles/TFDesktopCenter.sprite3"
+    },
+    {
+      "name": "控件//加载",
+      "file": "roles/TFLoadingControl.sprite3"
+    },
+    {
+      "name": "TFDesktopUI",
+      "file": "roles/TFDesktopUI.sprite3"
+    }
+  ],
+  "executor": {
+    "api": 1,
+    "entryRole": "TFDesktopUI",
+    "hooks": []
+  },
+  "app": {
+    "id": "techfure-desktop",
+    "name": "TechFure Desktop",
+    "icon": "icons/techfure.svg",
+    "type": "gui",
+    "entry": "TFDesktopUI",
+    "autostart": false
+  }
+}
