@@ -3,7 +3,7 @@
   "formatVersion": 1,
   "id": "hello-app",
   "name": "Hello App",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal command-line application package for DeepSO.",
   "roles": [
     {

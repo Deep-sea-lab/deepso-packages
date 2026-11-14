@@ -1,7 +1,7 @@
 [
   {
     "id": "hello-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "package": "packages/hello-app.dso",
     "manifest": "packages/hello-app/manifest.json"
   }

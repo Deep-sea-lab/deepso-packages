@@ -1,7 +1,7 @@
 // fractch:ignore
 sprite "HelloApp" at 0,0 hidden;
 
-when flag {
+when broadcast DSO_PROCESS_WAKE {
   local startedForRequest = false;
   forever {
     if vars["_DSO_START_REQUEST"] != "hello-app" {
