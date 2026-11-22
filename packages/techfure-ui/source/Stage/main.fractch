@@ -1,6 +1,0 @@
-platform "TurboWarp" from "https://turbowarp.org/";
-
-var "_DSO_START_REQUEST" = "";
-var "_DSO_START_ACK" = "";
-var "_DSO_STOP_REQUEST" = "";
-var "_DSO_APP_EXITED" = "";

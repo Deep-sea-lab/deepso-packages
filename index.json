@@ -24,9 +24,9 @@
     "manifest": "packages/welcome-center/manifest.json"
   },
   {
-    "id": "techfure-ui",
+    "id": "techfure-desktop",
     "version": "1.0.0",
-    "package": "packages/techfure-ui.dso",
-    "manifest": "packages/techfure-ui/manifest.json"
+    "package": "packages/TechFure-Desktop.dso",
+    "manifest": "packages/TechFure-Desktop/manifest.json"
   }
 ]

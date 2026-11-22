@@ -12,7 +12,8 @@ pkg search
 pkg install desk-clock
 pkg install click-counter
 pkg install welcome-center
-pkg install techfure-ui
+pkg install techfure-desktop
+run techfure-desktop
 run desk-clock
 ```
 
@@ -24,22 +25,17 @@ The repository also includes `hello-app`, a command-line process example.
 - `desk-clock` displays the current time.
 - `click-counter` increments when its page is clicked.
 - `welcome-center` shows common DeepSO commands.
-- `techfure-ui` demonstrates a navigable desktop menu, welcome page, and
-  file-manager, settings, and about mockups.
+- `techfure-desktop` packages the original TechFure desktop UI with system
+  operations disabled.
 
-These are single-stage GUI prototypes, not managed desktop windows. TechFure
-UI navigation is presentation-only; it does not operate the filesystem,
-persist settings, or launch other apps. Each role
-waits for the executor's `DSO_PROCESS_WAKE` broadcast, checks its app ID in
-`_DSO_START_REQUEST`, acknowledges with `_DSO_START_ACK`, and reports exit
-through `_DSO_APP_EXITED`.
+These are single-stage GUI prototypes, not managed desktop windows.
 
 ## Repository layout
 
 - `index.json` lists packages available to the in-system package manager.
 - `packages/<id>.dso` is the package archive downloaded by `pkg install`.
 - `packages/<id>/manifest.json`, `source/`, and `icons/` contain reviewable
-  package metadata, Fractch source, and artwork.
+  package metadata, Fractch source where available, and artwork.
 
 The package uses DeepSO package format version 1. Its manifest declares the
 app ID, imported role, icon, executor API, and process entry.
